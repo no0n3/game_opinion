@@ -1,0 +1,13 @@
+RewriteEngine on
+
+RewriteRule ^debug(.*) /index.php/debug$1
+RewriteRule ^login /index.php/login
+RewriteRule ^logout /index.php/logout
+RewriteRule ^sign-up /index.php/sign-up
+RewriteRule ^about /index.php/about
+RewriteRule ^contact /index.php/contact
+RewriteRule ^update/create /index.php/update/create
+RewriteRule ^game/([a-zA-Z0-9\-]) /index.php/game/$1
+RewriteRule ^game/([a-zA-Z0-9\-])/([a-zA-Z0-9\-]) /index.php/game/$1/$2
+RewriteRule ^ajax/update/upvote /index.php/ajax/update/upvote
+RewriteRule ^ajax/update/downvote /index.php/ajax/update/downvote
