@@ -85,8 +85,7 @@ JS;
 ?>
 
 <div class="site-index">
-    
-    <div>
+    <div class="games-index-cont">
         <h1>
             <?= Html::encode($this->title) ?>
         </h1>
@@ -97,14 +96,14 @@ JS;
 
     <div class="container cont-x">
     <?php $i = 0; $x = 0; foreach ($provider->getModels() as $model) : ?>
-        <?php if (0 === $i || 0 === $i % 2) : ?>
+        <?php if (0 === $i || 0 === $i % 3) : ?>
             <?php if (0 !== $i) : ?>
             </div>
             <?php $x--; endif; ?>
             <div class="row row-1">
         <?php $x++; endif; ?>
 
-        <div class="col-sm-6"><?= $this->render('game_item', ['model' => $model]) ?></div>
+        <div class="col-sm-4"><?= $this->render('game_item', ['model' => $model]) ?></div>
 
         
     <?php $i++; endforeach; ?>
@@ -112,21 +111,10 @@ JS;
             </div>
         <?php endif; ?>
     </div>
-<div>
-    <?= LinkPager::widget([
-        'pagination' => $provider->pagination,
-    ]); ?>
-</div>
-
-    <div>
-        <?php ListView::widget([
-            'dataProvider' => $provider,
-            'itemView' => 'game_item',
-            'itemOptions' => [
-                'class' => 'game-item',
-            ],
-            'layout' => '<div class="game-item-cont">{items}</div>{pager}',
-        ]) ?>
+    <div class="pagination-cont">
+        <?= LinkPager::widget([
+            'pagination' => $provider->pagination,
+        ]); ?>
     </div>
 
 </div>

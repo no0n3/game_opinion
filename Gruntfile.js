@@ -66,4 +66,6 @@ module.exports = function (grunt) {
     grunt.registerTask('css', ['cssmin']);
     grunt.registerTask('js', ['concat', 'uglify']);
 
+    grunt.registerTask('build', ['js', 'css']);
+
 };

@@ -7,7 +7,7 @@ use yii\helpers\Html;
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
 
-$description = 'A web application for posting .';//'A website for sharing game experience and opinions.';
+$description = 'A web application for sharing game experience and opinions. Main purpose to demonstrade SEO for a website.';
 
 $this->registerMetaTag([
     'property' => 'og:title',
@@ -24,13 +24,13 @@ $this->registerMetaTag([
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        A web application that 
+        <?= Html::encode($description) ?>
         <br/>
         Created and maintained by 
         <?php if (!empty(\Yii::$app->params['creatorSite'])) : ?>
-            <a href="<?= \Yii::$app->params['creatorSite'] ?>">Velizar Ivanov</a>
+            <a href="<?= \Yii::$app->params['creatorSite'] ?>"><?= isset(\Yii::$app->params['creator']) ? \Yii::$app->params['creator'] : 'Velizar Ivanov' ?></a>
         <?php else : ?>
-           Velizar Ivanov
+            <?= isset(\Yii::$app->params['creator']) ? \Yii::$app->params['creator'] : 'Velizar Ivanov' ?>
         <?php endif; ?>
         <br/>
         <?php if (!empty(\Yii::$app->params['creatorSite'])) : ?>

@@ -2,5 +2,5 @@
 
 return [
     'creator' => 'Velizar Ivanov',
-    'creatorSite' => 'http://portfolio.vivanof.com/',
+    'creatorSite' => 'http://vivanof.com/',
 ];
